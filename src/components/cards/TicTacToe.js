@@ -190,7 +190,7 @@ export default class TicTacToe extends Component {
 
     render() {
         return (
-            <>
+            <div className="game-space">
                 <div className="gameStatus">{this.state.gameStatus != 'inactive'
                                                 ? this.state.gameStatus.toUpperCase()
                                                 : null}</div>
@@ -201,7 +201,7 @@ export default class TicTacToe extends Component {
                 <div className="ttt-board">
                     {this.state.gameStatus != 'inactive' ? this.renderTiles() : null}
                 </div>
-            </>
+            </div>
         )
     }
 }

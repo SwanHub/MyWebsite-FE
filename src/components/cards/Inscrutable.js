@@ -105,7 +105,7 @@ export default class Inscrutable extends Component {
 
     render() {
         return (
-        <>
+        <div className="game-space">
             <h3>Inscrutable - Logic Game</h3>
             Remaining Moves: {this.state.movesRemain}
             <div className="inscrutable-board">
@@ -113,7 +113,7 @@ export default class Inscrutable extends Component {
             </div>
                 {this.renderOptions()}
                 {this.renderActiveTiles()}
-        </>
+        </div>
         )
     }
 }

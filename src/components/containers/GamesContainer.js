@@ -7,7 +7,6 @@ export default function GamesContainer() {
     return (
         <div className="games-container">
             <Router>
-                <h1> Welcome to the Games Corner! </h1>
                 <span className="game-header"><NavLink to="/games/tictactoe">Tic-Tac-Toe</NavLink></span>
                 <span className="game-header"><NavLink to="/games/inscrutable">Inscrutable</NavLink></span>
 
