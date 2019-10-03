@@ -1,0 +1,95 @@
+.games-container {
+    padding-top:100px;
+}
+
+.game-header {
+    display:inline-block;
+    padding: 10px;
+}
+
+.result {
+    padding: 10px;
+    font-style: italic;
+}
+
+.ttt-board {
+    display:flex;
+    flex-wrap: wrap;
+    width:33%;
+    margin:auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ttt-tile {
+    width:30%;
+    display:block;
+    padding: 10px 0px 10px;
+    cursor:pointer;
+    min-height: 1.15em;
+}
+
+.ttt-tile:hover {
+    background-color: green;
+}
+
+#tile-1 {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+#tile-7 {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+#tile-4 {
+    border:1px solid black;
+}
+
+#tile-3 {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#tile-5 {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.inscrutable-board {
+    width: 50%;
+    margin:auto;
+    display:flex;
+    justify-content: center;
+}
+
+.inscrutable-piece {
+    width: 10%;
+    border: 1px solid black;
+    color:red;
+    padding: 10px;
+    margin: 0px 2px 0px;
+    cursor:pointer;
+}
+
+.inscrutable-piece:hover {
+    background-color: aquamarine;
+}
+
+.active-piece {
+    width: 10%;
+    border: 1px solid black;
+    color:red;
+    padding: 10px;
+    margin: 0px 2px 0px;
+    cursor:pointer;
+    background-color: aquamarine;
+}
+
+ul {
+    list-style:none;
+    margin:0;
+    padding: 10px 0px 0px;
+}

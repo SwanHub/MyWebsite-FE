@@ -1,0 +1,35 @@
+body { 
+    text-align:center;
+    margin:0;
+}
+
+.app {
+    min-height: 100vh;
+    background-image: url('https://user-images.githubusercontent.com/47403119/66098981-041bd780-e562-11e9-9ad3-6eb764d02427.jpg');
+    background-size: cover;
+    background-position: center center;  
+}
+
+.blank {
+    min-height: 100vh;
+}
+
+svg {
+    width: 30px;
+}
+
+.square {
+    width: 20px;
+    height:20px;
+    border:1px solid black;
+}
+
+.home-container {
+    padding-top:100px;
+}
+
+/* Home: <div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
+/* Lightbulb: <div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
+/* quill: <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
+/* Puzzle: <div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
+/* Astro:  <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
