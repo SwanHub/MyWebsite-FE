@@ -1,3 +1,15 @@
 .projects-container {
-    padding-top: 100px;
+    padding-top: 26px;
+    height: calc(60vh - 20px);
+
+}
+
+.projects-container p {
+    margin-top: 6px;
+    font-style: italic;
+    color:white;
+}
+
+.project-card {
+    border: 1px solid black;
 }

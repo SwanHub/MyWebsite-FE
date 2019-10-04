@@ -1,74 +1,12 @@
 header {
-    display:flex;
-    justify-content: center;
+    background-color: black;
+    padding: 17px;
     text-align: center;
-    background-image: linear-gradient(rgb(255,255,255,0.3), rgba(255,255,255,0));
-    padding:0px;
-    cursor:pointer;
-    transition-duration: 1s;
+    font-family: "Courier", sans-serif;
+    margin-bottom:70px;
+    box-shadow: 2px 5px 10px grey;
 }
 
-header:hover {
-    background-image: linear-gradient( rgba(255,255,255,0.5), rgba(255,255,255,0));
+header a {
+    color: yellow;
 }
-
-header div {
-    padding: 20px;
-}
-
-header svg {
-    margin: 10px 20px 0px;
-    width: 50px;
-    fill: rgb(21, 21, 21);
-    transition: all .2s ease-in-out;
-}
-
-header svg:hover {
-    fill: rgb(226,26,34);
-    margin: 0px 20px 0px;
-    padding-bottom: 10px;
-}
-
-small { 
-    color: black;
-    font-style:italic;
-}
-
-a { 
-    text-decoration:none;
-}
-
-.active-navicon { 
-    visibility: visible;
-}
-
-.hide-navicon {
-    visibility: hidden;
-}
-
-#home-icon:hover {
-    fill: rgb(15,157,88);
-}
-#bulb-icon:hover {
-    fill: rgb(244,160,0);
-}
-#puzzle-icon:hover {
-    fill: rgb(219,68,55)
-}
-#astro-icon:hover {
-    fill: rgb(225,225,225);
-}
-#quill-icon:hover {
-    fill: rgb(66,133,244)
-}
-
-/* Colors taken from the jiro dreams of sushi poster */
-/* 164	29	34	 darker red */
-/* 226	26	34	 light red */
-/* 77	46	46	 brownish */ 
-/* 239	243	245	apron => steel white. */
-
-/* 97	96	94	dark grey */
-/* 154	145	143	 light grey */
-
-/* 210	78	56	salmon */

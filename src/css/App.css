@@ -5,9 +5,8 @@ body {
 
 .app {
     min-height: 100vh;
-    background-image: url('https://user-images.githubusercontent.com/47403119/66098981-041bd780-e562-11e9-9ad3-6eb764d02427.jpg');
-    background-size: cover;
-    background-position: center center;  
+    background-image: url('https://user-images.githubusercontent.com/47403119/66181475-2844ea80-e62e-11e9-9da2-52fcc5f10c90.JPG');
+    background-size: 100vw;
 }
 
 .blank {
@@ -25,7 +24,81 @@ svg {
 }
 
 .home-container {
-    padding-top:100px;
+    height: 100%;
+    display:flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.socials { 
+    margin-top: 60px;
+}
+
+.socials a {
+    display:inline-block;
+    padding: 20px;
+    cursor:pointer;
+    margin: 10px 30px 10px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.socials a:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.socials svg {
+    width: 40px;
+}
+
+.main-content {
+    border: 3px solid yellow;
+    width: 700px;
+    height: 60vh;
+    border-radius: 5px;
+    margin: auto;
+    background-image: radial-gradient(rgba(0,0,0,0), rgba(255,255,255,0.2));
+}
+
+#twitter {
+    fill:#65BBF2;
+}
+#linkedin {
+    fill:#0077B7;
+}
+#medium-1 {
+    fill:#00FD8D;
+}
+#medium-2 {    
+    fill:#00E470;
+}
+#medium-3 {    
+    fill:#00C967;
+}
+#medium-4 {  
+    fill:#00AD6C;
+}
+
+.bio {
+    margin-bottom: 40px;
+    color:white;
+    font-size: 15px;
+    font-family: 'Courier', sans-serif;
+    width: 60%;
+    border-radius: 5px;
+    margin:auto;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.bio small {
+    background-color: rgba(255,255,255,0.1);
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.bio small:hover {
+    background-color: rgba(255,255,255,0.3);
 }
 
 /* Home: <div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
@@ -33,3 +106,7 @@ svg {
 /* quill: <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
 /* Puzzle: <div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
 /* Astro:  <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
+/* LinkedIN: <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
+/* Twitter: <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
+/* MEdium: <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
+/* Heroku: <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */

@@ -4,17 +4,18 @@ import './css/App.css';
 import './css/Dot.css';
 import './css/Games.css';
 import './css/Header.css';
-import './css/Experience.css';
+import './css/BottomBar.css';
 import './css/Articles.css';
 import './css/Projects.css';
 
 import Main from './components/Main'
 import NavBar from './components/NavBar'
+import BottomBar from './components/BottomBar'
 
 class App extends Component {
 
   state = {
-    projects: [], 
+    projects: {}, 
     articles: [],
     openingView: true, 
     left: '',
@@ -28,20 +29,24 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('https://jackprince-dev-be.herokuapp.com/')
+    fetch('https://custom-go-test.herokuapp.com/projects')
       .then(r => r.json())
-      .then(r => this.setState({ projects: r.projects, articles: r.articles}))
+      .then(r => this.setState({ projects: r}))
+   
+      fetch('https://custom-go-test.herokuapp.com/articles')
+      .then(r => r.json())
+      .then(r => this.setState({ articles: r}))
   }
 
   render(){
-    const style = {
-      backgroundColor: `rgb(120,${parseInt(this.state.left)/3},240)`
+    const dotStyle = {
+      backgroundColor: `rgb(${this.state.top/5},122,${this.state.left/5})`
     }
 
     if (this.state.openingView) {
       return (
         <div className="blank" onMouseMove={(event) => this.setState({left: event.clientX, top: event.clientY})}>
-            <div id="dot" style={style} onClick={this.handleOpen}></div>
+            <div id="dot" style={dotStyle} onClick={this.handleOpen}></div>
         </div>
       );
       } else {
@@ -50,6 +55,7 @@ class App extends Component {
         <div className="app">
           <NavBar />
           <Main projects={this.state.projects} articles={this.state.articles}/>
+          <BottomBar />
         </div>
       </Router>
     )}

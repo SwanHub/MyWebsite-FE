@@ -8,13 +8,10 @@
     background-color:black;
     border-radius: 50%;
     cursor:pointer;
-    transition: all ease-in-out 1s;
-    border-width: 1px;
-    border-style: solid;
+    transition: transform ease-in-out 1s;
 }
 
 #dot:hover { 
-    background-color:red;
     transform: scale(0.7);
 }
 

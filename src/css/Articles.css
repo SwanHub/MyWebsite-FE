@@ -1,3 +1,78 @@
 .articles-container {
-    padding-top: 100px;
+    padding-top: 20px;
+    height: calc(60vh - 20px);
+    overflow: scroll;
+}
+
+.articles-container svg {
+    width: 60px;
+}
+
+.articles-container > span {
+    color:white;
+    font-style: italic;
+    display: block;
+}
+
+.article {
+    color:rgb(42,42,42);
+    width: 80%;
+    margin: auto;
+    margin-top:20px;
+    padding: 10px;
+    text-align: left;
+    background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.6),rgba(255,255,255,0.3) );
+    font-family: 'Georgia', serif;
+    cursor:pointer;
+    transition-duration: 0.5s; 
+}
+
+.article:hover {
+    background-color: rgba(255,255,255,0.8);
+    transform:scale(1.05);
+}
+
+.article img {
+    padding: 5px 0px 5px;
+    width: 40px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color:rgba(0,0,0,0.3);
+}
+
+.article-title {
+    margin: 0;
+    font-size:0.9rem;
+    color:black;
+}
+
+.article-description {
+    margin:0;
+    font-size: 0.8rem;
+}
+
+.article-publisher {
+    margin: 5px 0px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.article-date {
+    color: rgb(21,21,21);
+}
+
+.article-claps {
+    color:grey;
+}
+
+.title-view {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pointer {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: green;
 }
