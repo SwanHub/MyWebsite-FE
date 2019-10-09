@@ -12,19 +12,26 @@ export default class Project extends Component {
         })
     }
 
+    displayProjects = (project, projects) => {
+        return projects[project].Languages.map(language => {
+            return <span>{language.Name}</span>
+        })
+    }
+
     render(){
+        const { projects, project } = this.props
         return (
             <div className="project-card" 
             onMouseEnter={this.handleHoverToggle} 
             onMouseLeave={this.handleHoverToggle}>
             {/* {this.state.active ? <span className="project-pointer">&#9758;</span> : null}   */}
                 <div className="project-name">
-                    <a target="_blank" style={this.state.active ? {color: 'rgb(0,0,0)'} : null }href={this.props.projects[this.props.project].Url}>
-                        {this.props.projects[this.props.project].Name}
-                        <span>{this.props.projects[this.props.project].Languages[0].Name} | {this.props.projects[this.props.project].Languages[1].Name}</span>
+                    <a target="_blank" style={this.state.active ? {color: 'rgb(0,0,0)'} : null } href={projects[project].Url}>
+                        {projects[project].Name}
+                        <>{this.displayProjects(project, projects)}</>
                     </a>
                 </div>
-                <div className="project-description">{this.props.projects[this.props.project].Description}</div>
+                <div className="project-description">{projects[project].Description}</div>
             </div>
         )
     }
