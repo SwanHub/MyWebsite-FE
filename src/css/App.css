@@ -103,7 +103,7 @@ svg {
 #medium-4 {  
     fill:#00AD6C;
 }
-#react {
+.react {
     fill: rgb(86,213,250);
     width: 40px;
     margin: 10px;
@@ -111,6 +111,13 @@ svg {
 #ruby {
     width: 40px;
     margin: 10px;
+}
+#mail-icon {
+    cursor: pointer;
+    fill: black;
+}
+#mail-icon:hover {
+    fill: yellow;
 }
 
 .bio {
@@ -145,6 +152,23 @@ svg {
     margin:auto;
 }
 
+.contact-card-detail {
+    position:absolute;
+    top: 60px;
+    left: 10px;
+    padding: 10px;
+    background-color: rgba(145,145,145,1);
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: Courier, monospace;
+}
+
+.contact-card-icon {
+    position:absolute;
+    top: 60px;
+    left: 10px;
+}
+
 /* Home: <div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
 /* Lightbulb: <div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
 /* quill: <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
@@ -154,3 +178,4 @@ svg {
 /* Twitter: <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
 /* MEdium: <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
 /* Heroku: <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
+/* Mail: <div>Icons made by <a href="https://www.flaticon.com/authors/chanut" title="Chanut">Chanut</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */

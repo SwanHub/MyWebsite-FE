@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import TicTacToe from '../cards/TicTacToe'
-import Inscrutable from '../cards/Inscrutable'
+// import Inscrutable from '../cards/Inscrutable'
 import ReactIcon from '../cards/icons/ReactIcon'
 import Ruby from '../cards/icons/Ruby'
 

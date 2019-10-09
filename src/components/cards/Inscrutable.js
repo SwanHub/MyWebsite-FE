@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Piece from './Piece'
+import Directions from './Directions'
 
 export default class Inscrutable extends Component {
 
@@ -7,7 +8,8 @@ export default class Inscrutable extends Component {
         board: [1, 2, 3, 4, 5, 6, 7, 8, 9],
         activePieces: [],
         movesRemain: 4,
-        result: 'ongoing'
+        status: 'inactive',
+        view: 'pregame'
     }
 
     setActivePieces = (id) => {
@@ -103,17 +105,39 @@ export default class Inscrutable extends Component {
         })
     }
 
+    displayDirections = () => {
+        this.setState({
+            view: 'game',
+            status: 'ongoing'
+        })
+    }
+
+    resetGame = () => {
+        this.setState({
+            view: 'game'
+        })
+    }
+
     render() {
-        return (
-        <div className="game-space">
-            <h3>Inscrutable - Logic Game</h3>
-            Remaining Moves: {this.state.movesRemain}
-            <div className="inscrutable-board">
-                {this.renderTiles()}
+        if (this.state.view === 'game'){
+            return (
+            <div className="inscrutable-space">
+                <span className="remaining-moves">Remaining Moves: {this.state.movesRemain}</span>
+                <div className="inscrutable-board">
+                    {this.renderTiles()}
+                </div>
+                    {this.renderOptions()}
+                    {this.renderActiveTiles()}
             </div>
-                {this.renderOptions()}
-                {this.renderActiveTiles()}
-        </div>
-        )
+            )
+        } else {
+            return(
+                <div className="inscrutable-options">
+                    <button onClick={this.displayDirections}> Directions </button>
+                    <button style={{marginTop: '10px'}} onClick={this.resetGame}> Play </button>
+                    {this.state.view === 'directions' ? <Directions /> : null}
+                </div>
+            )
+        }
     }
 }

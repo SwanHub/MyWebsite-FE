@@ -5,13 +5,13 @@ import ProjectContainer from './containers/ProjectContainer'
 import GamesContainer from './containers/GamesContainer'
 import ArticleContainer from './containers/ArticleContainer'
 import Home from './cards/Home'
-import Golang from './cards/Golang'
+import Contact from './cards/Contact'
+
 
 export default class Main extends Component {
     render() {
         return (
             <div className="main-content">
-                <Golang />
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/projects" render={() => 
                     <ProjectContainer projects={this.props.projects}/>
@@ -20,6 +20,7 @@ export default class Main extends Component {
                 <Route exact path="/articles" render={() =>
                     <ArticleContainer articles={this.props.articles}/>
                 }/>
+                <Contact />
             </div>            
         )
     }

@@ -18,3 +18,11 @@ header a {
     font-size: 0.8rem;
     color:yellow;
 }
+
+#location svg.react {
+    margin: 0px;
+}
+
+#location svg {
+    width: 20px;
+}
