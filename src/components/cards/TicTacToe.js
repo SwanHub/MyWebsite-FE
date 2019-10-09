@@ -164,12 +164,6 @@ export default class TicTacToe extends Component {
         return score
     }
 
-    startGame = () => {
-        this.setState({
-            gameStatus: 'ongoing'
-        })
-    }
-
     resetGame = () => {
         this.setState({
             currentBoard: [" ", " ", " ", " ", " ", " ", " ", " ", " ",],
@@ -182,22 +176,11 @@ export default class TicTacToe extends Component {
         })
     }
 
-    handleGameOver = () => {
-        return (
-            <button onClick={this.resetGame}>Again?</button>
-        )
-    }
-
     render() {
         return (
             <div className="game-space">
-                <div className="gameStatus">{this.state.gameStatus != 'inactive'
-                                                ? this.state.gameStatus.toUpperCase()
-                                                : null}</div>
-                {this.state.gameStatus == 'inactive' ? <button onClick={this.startGame}> Play Game </button> : null}
-                {this.state.gameStatus !== 'ongoing' || this.state.gameStatus === 'inactive' 
-                        ? this.handleGameOver() 
-                        : null }
+                <div className="gameStatus">{this.state.gameStatus === 'victory' || this.state.gameStatus === 'defeat' || this.state.gameStatus === 'tie' ? this.state.gameStatus.toUpperCase(): null}</div>
+                {this.state.gameStatus !== 'ongoing' ? <button onClick={this.resetGame}> Play </button> : null}
                 <div className="ttt-board">
                     {this.state.gameStatus != 'inactive' ? this.renderTiles() : null}
                 </div>

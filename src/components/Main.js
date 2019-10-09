@@ -10,7 +10,7 @@ export default class Main extends Component {
     render() {
         return (
             <div className="main-content">
-                <Route exact path="/home" component={Home}/>
+                <Route exact path="/" component={Home}/>
                 <Route exact path="/projects" render={() => 
                     <ProjectContainer projects={this.props.projects}/>
                     }/>

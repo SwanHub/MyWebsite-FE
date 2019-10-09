@@ -25,13 +25,15 @@ export default class BottomBar extends Component {
             {props => (
                 <div style={props}>
                     <footer className="navbar">
-                        <div><NavLink to="/projects"><Bulb handleLink={this.handleLink}/>
-                        <br/>
-                        <small className={this.state.activeLink === 'bulb' 
-                                    ? "active-navicon" 
-                                    : "hide-navicon"}>
-                                Projects</small>
-                        </NavLink></div>
+                        <div>
+                        <NavLink to="/projects"><Bulb handleLink={this.handleLink}/>
+                            <br/>
+                            <small className={this.state.activeLink === 'bulb' 
+                                        ? "active-navicon" 
+                                        : "hide-navicon"}>
+                                    Projects</small>
+                        </NavLink>
+                        </div>
 
                         <div><NavLink to="/games"><Puzzle handleLink={this.handleLink}/>
                         <br/>

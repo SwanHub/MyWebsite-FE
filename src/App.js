@@ -32,10 +32,6 @@ class App extends Component {
     fetch('https://custom-go-test.herokuapp.com/projects')
       .then(r => r.json())
       .then(r => this.setState({ projects: r}))
-   
-      fetch('https://custom-go-test.herokuapp.com/articles')
-      .then(r => r.json())
-      .then(r => this.setState({ articles: r}))
   }
 
   render(){
@@ -43,13 +39,13 @@ class App extends Component {
       backgroundColor: `rgb(${this.state.top/5},122,${this.state.left/5})`
     }
 
-    if (this.state.openingView) {
-      return (
-        <div className="blank" onMouseMove={(event) => this.setState({left: event.clientX, top: event.clientY})}>
-            <div id="dot" style={dotStyle} onClick={this.handleOpen}></div>
-        </div>
-      );
-      } else {
+    // if (this.state.openingView) {
+    //   return (
+    //     <div className="blank" onMouseMove={(event) => this.setState({left: event.clientX, top: event.clientY})}>
+    //         <div id="dot" style={dotStyle} onClick={this.handleOpen}></div>
+    //     </div>
+    //   );
+    //   } else {
     return (
       <Router>
         <div className="app">
@@ -58,7 +54,8 @@ class App extends Component {
           <BottomBar />
         </div>
       </Router>
-    )}
+    )
+  // }
     }
   }
 

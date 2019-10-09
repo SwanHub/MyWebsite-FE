@@ -21,7 +21,7 @@
     margin-top:20px;
     padding: 10px;
     text-align: left;
-    background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.6),rgba(255,255,255,0.3) );
+    background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.6),rgba(255,255,255,0.4) );
     font-family: 'Georgia', serif;
     cursor:pointer;
     transition-duration: 0.5s; 
@@ -71,7 +71,7 @@
     justify-content: space-between;
 }
 
-.pointer {
+.article-pointer {
     margin-right: 10px;
     font-size: 1.2rem;
     color: green;

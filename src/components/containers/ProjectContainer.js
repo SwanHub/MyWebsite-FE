@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 import Project from '../cards/Project'
 
 export default function ProjectContainer(props) {
@@ -9,13 +10,7 @@ export default function ProjectContainer(props) {
         let projectsArr = []
 
         for (const project of projects){
-            projectsArr.push(
-                <div className="project-card">
-                    <div>{props.projects[project].Name}</div>
-                    <div>{props.projects[project].Description}</div>
-                    <div>{props.projects[project].Url}</div>
-                </div>
-            )
+            projectsArr.push( <Project projects={props.projects} project={project}/>)
         }
         return projectsArr
     }

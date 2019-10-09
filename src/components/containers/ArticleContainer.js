@@ -1,20 +1,32 @@
-import React from 'react'
+import React, {Component} from 'react'
 import Article from '../cards/Article'
 import Medium from '../cards/icons/Medium'
 
-export default function ArticleContainer(props) {
+export default class ArticleContainer extends Component{
 
-    const renderArticles = () => {        
-        return props.articles.map(article => {
+    state = {
+        articles: []
+    }
+
+    componentDidMount(){
+        fetch('https://custom-go-test.herokuapp.com/articles')
+            .then(r => r.json())
+            .then(r => this.setState({ articles: r}))
+    }
+
+    renderArticles = () => {        
+        return this.state.articles.map(article => {
             return <Article article={article}/>
         })
     }
-    
-    return (
-        <div className="articles-container">
-            <Medium />
-            <span>Published Medium Articles</span>
-            {renderArticles()}
-        </div>
-    )
+
+    render(){
+        return (
+            <div className="articles-container">
+                <Medium />
+                <span>Published Medium Articles</span>
+                {this.renderArticles()}
+            </div>
+        )
+    }
 }

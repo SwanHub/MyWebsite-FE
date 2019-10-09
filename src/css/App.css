@@ -5,8 +5,22 @@ body {
 
 .app {
     min-height: 100vh;
-    background-image: url('https://user-images.githubusercontent.com/47403119/66181475-2844ea80-e62e-11e9-9da2-52fcc5f10c90.JPG');
-    background-size: 100vw;
+    background-image: url('https://user-images.githubusercontent.com/47403119/66286891-a30d4000-e890-11e9-8f83-f74b10611fe9.jpg');
+    background-size: cover;
+}
+
+.hide {
+    opacity:0;
+    visibility:hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.show {
+    opacity: 1;
+    visibility:visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 .blank {
@@ -43,22 +57,34 @@ svg {
 }
 
 .socials a:hover {
-    background-color: rgba(0,0,0,0.7);
+    background-color: white;
+    /* background-color: rgba(0,0,0,0.7); */
 }
 
 .socials svg {
     width: 40px;
 }
 
+
 .main-content {
-    border: 3px solid yellow;
+    border: 3px solid rgb(51,51,51);
     width: 700px;
     height: 60vh;
     border-radius: 5px;
     margin: auto;
-    background-image: radial-gradient(rgba(0,0,0,0), rgba(255,255,255,0.2));
+    background-color: rgba(0,0,0,0.5);
 }
 
+#home-icon  {
+    position:absolute;
+    top: 17px;
+    right: 20px;
+    fill:yellow;
+    width: 20px;
+}
+#github {
+    fill: #6e5494;;
+}
 #twitter {
     fill:#65BBF2;
 }
@@ -76,6 +102,15 @@ svg {
 }
 #medium-4 {  
     fill:#00AD6C;
+}
+#react {
+    fill: rgb(86,213,250);
+    width: 40px;
+    margin: 10px;
+}
+#ruby {
+    width: 40px;
+    margin: 10px;
 }
 
 .bio {
@@ -99,6 +134,15 @@ svg {
 
 .bio small:hover {
     background-color: rgba(255,255,255,0.3);
+}
+
+.message-box {
+    color:white;
+    background-color: rgba(0,0,0,0.2);
+    width: 80%;
+    font-family: 'Courier', sans-serif;
+    padding: 2rem;
+    margin:auto;
 }
 
 /* Home: <div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> */
