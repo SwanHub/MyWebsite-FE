@@ -7,6 +7,11 @@
 .game-header {
     display:inline-block;
     padding: 0px 10px;
+    /* margin:10px; */
+}
+
+.game-header:focus {
+    outline:0;
 }
 
 .games-container-icons {
@@ -188,4 +193,19 @@ ul {
 .remaining-moves {
     display:inline-block;
     padding: 10px;
+}
+
+#arrow-l {
+    width: 30px;
+    cursor: pointer;
+}
+#arrow-r {
+    width: 30px;
+    cursor: pointer;
+}
+#arrow-l:hover {
+    fill: red;
+}
+#arrow-r:hover {
+    fill: red;
 }

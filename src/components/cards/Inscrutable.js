@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Piece from './Piece'
 import Directions from './Directions'
+import ArrowR from './icons/ArrowR'
+import ArrowL from './icons/ArrowL'
 
 export default class Inscrutable extends Component {
 
@@ -9,7 +11,8 @@ export default class Inscrutable extends Component {
         activePieces: [],
         movesRemain: 4,
         status: 'inactive',
-        view: 'pregame'
+        view: 'pregame',
+        currentMove: ''
     }
 
     setActivePieces = (id) => {
@@ -52,11 +55,18 @@ export default class Inscrutable extends Component {
     }
 
     handleShift = () => {
+        this.setState({
+            currentMove: 'shift'
+        })
+    }
+
+    shift = (input) => {
         const currentBoard = this.state.board 
-        const changedBoard = currentBoard.map((el, i) => currentBoard[(i+1)%9])
+        const changedBoard = currentBoard.map((el, i) => currentBoard[(i-input)%9])
         this.setState({
             board: changedBoard,
-            activePieces: []
+            activePieces: [],
+            movesRemain: this.state.movesRemain - 1
         })
     }
 
@@ -64,7 +74,8 @@ export default class Inscrutable extends Component {
         const reversedBoard = this.state.board.reverse()
         this.setState({
             board: reversedBoard,
-            activePieces: []
+            activePieces: [], 
+            movesRemain: this.state.movesRemain - 1
         })
     }
 
@@ -81,7 +92,8 @@ export default class Inscrutable extends Component {
 
         this.setState({
             board: currentBoard, 
-            activePieces: []
+            activePieces: [], 
+            movesRemain: this.state.movesRemain - 1
         })
     }
 
@@ -101,14 +113,15 @@ export default class Inscrutable extends Component {
 
         this.setState({
             board: currentBoard.flat(),
-            activePieces: []
+            activePieces: [], 
+            movesRemain: this.state.movesRemain - 1
         })
     }
 
     displayDirections = () => {
         this.setState({
-            view: 'game',
-            status: 'ongoing'
+            view: 'directions',
+            status: 'inactive'
         })
     }
 
@@ -124,7 +137,9 @@ export default class Inscrutable extends Component {
             <div className="inscrutable-space">
                 <span className="remaining-moves">Remaining Moves: {this.state.movesRemain}</span>
                 <div className="inscrutable-board">
+                    {this.state.currentMove === 'shift' ? <ArrowL shift={this.shift}/> : null}
                     {this.renderTiles()}
+                    {this.state.currentMove === 'shift' ? <ArrowR shift={this.shift}/> : null}
                 </div>
                     {this.renderOptions()}
                     {this.renderActiveTiles()}
