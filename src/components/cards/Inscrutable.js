@@ -3,6 +3,7 @@ import Piece from './Piece'
 import Directions from './Directions'
 import ArrowR from './icons/ArrowR'
 import ArrowL from './icons/ArrowL'
+import ThumbsUp from './icons/ThumbsUp'
 
 export default class Inscrutable extends Component {
 
@@ -15,13 +16,27 @@ export default class Inscrutable extends Component {
         currentMove: ''
     }
 
+    // later, will need to give user ability to switch tile choice mid-swap turn. 
     setActivePieces = (id) => {
-        const newSet = this.state.activePieces 
-        newSet.push(id)
+        if (this.state.currentMove === 'swap'){
+            if (this.state.activePieces.length < 2){
+                const newSet = this.state.activePieces 
+                newSet.push(id)
 
-        this.setState({
-            activePieces: newSet
-        })
+                this.setState({
+                    activePieces: newSet
+                })
+            }
+        } else if (this.state.currentMove === 'jump'){
+            if (this.state.activePieces.length < 3){
+                const newSet = this.state.activePieces 
+                newSet.push(id)
+        
+                this.setState({
+                    activePieces: newSet
+                })
+            }
+        }
     }
 
     renderTiles = () => {
@@ -31,12 +46,16 @@ export default class Inscrutable extends Component {
                         i={i} 
                         board={this.state.board} 
                         setActivePieces={this.setActivePieces}
-                        key={i}    
+                        currentMove={this.state.currentMove}
+                        activePieces={this.state.activePieces.length}
+                        active={this.state.activePieces.includes(i) ? true : false}
+                        key={i} 
                         />)
         }
         return board
     }
 
+    // development, helper method
     renderActiveTiles = () => {
         return(
             <div>{this.state.activePieces}</div>
@@ -46,10 +65,10 @@ export default class Inscrutable extends Component {
     renderOptions = () => {
         return (
             <ul>
-                <li onClick={this.handleShift}>Shift</li>
+                <li onClick={this.handleShift} className={this.state.currentMove === 'shift' ? "active-move" : null}>Shift</li>
                 <li onClick={this.handleReverse}>Reverse</li>
-                <li onClick={this.handleSwap}>Swap</li>
-                <li onClick={this.handleJump}>Jump</li>
+                <li onClick={this.handleSwap} className={this.state.currentMove === 'swap' ? "active-move" : null}>Swap</li>
+                <li onClick={this.handleJump} className={this.state.currentMove === 'jump' ? "active-move" : null}>Jump</li>
             </ul>
         )
     }
@@ -73,6 +92,7 @@ export default class Inscrutable extends Component {
     handleReverse = () => {
         const reversedBoard = this.state.board.reverse()
         this.setState({
+            currentMove: 'reverse',
             board: reversedBoard,
             activePieces: [], 
             movesRemain: this.state.movesRemain - 1
@@ -81,6 +101,12 @@ export default class Inscrutable extends Component {
 
     // refactor this. 
     handleSwap = () => {
+        this.setState({
+            currentMove: 'swap'
+        })
+    }
+
+    swap = () => {
         let currentBoard = this.state.board
         const pieces = this.state.activePieces
         const a = pieces[0]
@@ -93,11 +119,18 @@ export default class Inscrutable extends Component {
         this.setState({
             board: currentBoard, 
             activePieces: [], 
-            movesRemain: this.state.movesRemain - 1
+            movesRemain: this.state.movesRemain - 1,
+            currentMove: 'none'
+        })
+    } 
+
+    handleJump = () => {
+        this.setState({
+            currentMove: 'jump'
         })
     }
 
-    handleJump = () => {
+    jump = () => {
         let currentBoard = this.state.board
         let tempBoard = currentBoard.map(i => i)
 
@@ -141,6 +174,9 @@ export default class Inscrutable extends Component {
                     {this.renderTiles()}
                     {this.state.currentMove === 'shift' ? <ArrowR shift={this.shift}/> : null}
                 </div>
+                    {this.state.currentMove === 'swap' && this.state.activePieces.length === 2 
+                        ? <ThumbsUp confirmMove={this.swap}/>
+                        : null}
                     {this.renderOptions()}
                     {this.renderActiveTiles()}
             </div>

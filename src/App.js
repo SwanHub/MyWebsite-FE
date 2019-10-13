@@ -35,17 +35,6 @@ class App extends Component {
   }
 
   render(){
-    const dotStyle = {
-      backgroundColor: `rgb(${this.state.top/5},122,${this.state.left/5})`
-    }
-
-    // if (this.state.openingView) {
-    //   return (
-    //     <div className="blank" onMouseMove={(event) => this.setState({left: event.clientX, top: event.clientY})}>
-    //         <div id="dot" style={dotStyle} onClick={this.handleOpen}></div>
-    //     </div>
-    //   );
-    //   } else {
     return (
       <Router>
         <div className="app">
@@ -54,9 +43,7 @@ class App extends Component {
           <BottomBar />
         </div>
       </Router>
-    )
-  // }
-    }
+    )}
   }
 
   

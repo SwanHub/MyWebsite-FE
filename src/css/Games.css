@@ -102,8 +102,10 @@
 }
 
 .inscrutable-piece {
+    transition: all 1s ease-in-out;
     width: 10%;
     border: 1px solid black;
+    border-radius: 50%;
     color:red;
     padding: 10px;
     margin: 0px 2px 0px;
@@ -115,12 +117,14 @@
 }
 
 .active-piece {
+    transition: all 1s ease-in-out;
     width: 10%;
     border: 1px solid black;
     color:red;
     padding: 10px;
     margin: 0px 2px 0px;
     cursor:pointer;
+    transform: translateY(-10px);
     background-color: aquamarine;
 }
 
@@ -187,14 +191,13 @@ ul {
 }
 
 .inscrutable-space li:hover {
-    background-color: yellow;
+    background-color: rgba(255,255,0,0.5);
 }
 
 .remaining-moves {
     display:inline-block;
     padding: 10px;
 }
-
 #arrow-l {
     width: 30px;
     cursor: pointer;
@@ -208,4 +211,15 @@ ul {
 }
 #arrow-r:hover {
     fill: red;
+}
+#thumbs-up {
+    margin-top: 10px;
+    cursor: pointer;
+    fill: yellow;
+}
+#thumbs-up:hover {
+    fill: green;
+}
+.active-move {
+    background-color: yellow;
 }
