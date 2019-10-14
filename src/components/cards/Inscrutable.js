@@ -50,6 +50,7 @@ export default class Inscrutable extends Component {
                         activePieces={this.state.activePieces.length}
                         active={this.state.activePieces.includes(i) ? true : false}
                         key={i} 
+                        jump={this.jump}
                         />)
         }
         return board
@@ -130,11 +131,12 @@ export default class Inscrutable extends Component {
         })
     }
 
-    jump = () => {
+    jump = (index) => {
         let currentBoard = this.state.board
         let tempBoard = currentBoard.map(i => i)
 
-        const chosenSpot = 0
+        const chosenSpot = parseInt(index.slice(-1))
+
         const choices = this.state.activePieces
         let sortedChoices = choices.sort().reverse()
         for (const n of sortedChoices){
@@ -147,7 +149,8 @@ export default class Inscrutable extends Component {
         this.setState({
             board: currentBoard.flat(),
             activePieces: [], 
-            movesRemain: this.state.movesRemain - 1
+            movesRemain: this.state.movesRemain - 1,
+            currentMove: 'none'
         })
     }
 
@@ -174,7 +177,7 @@ export default class Inscrutable extends Component {
                     {this.renderTiles()}
                     {this.state.currentMove === 'shift' ? <ArrowR shift={this.shift}/> : null}
                 </div>
-                    {this.state.currentMove === 'swap' && this.state.activePieces.length === 2 
+                    {this.state.currentMove === 'swap' && this.state.activePieces.length === 2
                         ? <ThumbsUp confirmMove={this.swap}/>
                         : null}
                     {this.renderOptions()}

@@ -223,3 +223,10 @@ ul {
 .active-move {
     background-color: yellow;
 }
+.jump-pointer {
+    cursor: pointer;
+}
+.jump-pointer:hover {
+    color:red;
+    transform: scale(1.3);
+}
