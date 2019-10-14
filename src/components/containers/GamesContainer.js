@@ -46,12 +46,12 @@ export default class GamesContainer extends React.Component{
                             className="game-header">Tic-Tac-Toe
                     </button>
 
-                    <button onClick={this.showInscrutable} 
+                    {/* <button onClick={this.showInscrutable} 
                             style={this.state.game === 'inscrutable' 
                                 ? {borderColor: 'white', margin: '10px'} 
                                 : {margin: '10px'}} 
                             className="game-header">Inscrutable
-                    </button>
+                    </button> */}
                     
                     {this.renderGame()}
             </div>
